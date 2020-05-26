@@ -1,0 +1,49 @@
+import React, { useState } from "react";
+import CardUser from "../Card/CardUser";
+
+const UserList = () => {
+  const [Users, setUsers] = useState([
+    {
+      Fname: "john",
+      Lname: "Smith",
+      Image: "https://www.fillmurray.com/200/200",
+      Email: "Jsmith@gmail.com",
+      id: 1,
+    },
+    {
+      Fname: "Mike",
+      Lname: "Smith",
+      Image: "https://www.fillmurray.com/200/200",
+      Email: "Mikesmith@gmail.com",
+      id: 2,
+    },
+    {
+      Fname: "Jimmy",
+      Lname: "Nagles",
+      Image: "https://www.fillmurray.com/200/200",
+      Email: "JN9@gmail.com",
+      id: 3,
+    },
+  ]);
+
+  return (
+    <div className="card-panel container center col l6 right">
+      <h2>List of User</h2>
+
+      <ul>
+        {Users.map((User) => {
+          return (
+           <CardUser
+           Name={User.Fname}
+           LastName={User.Lname}
+           Email={User.Email}
+           image={User.Image}
+           ></CardUser>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+export default UserList;
