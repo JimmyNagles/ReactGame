@@ -24,7 +24,23 @@ const UserList = () => {
       Email: "JN9@gmail.com",
       id: 3,
     },
+    {
+      Fname: "Clau",
+      Lname: "Saez",
+      Image: "https://www.fillmurray.com/200/200",
+      Email: "Czes@gmail.com",
+      id: 3,
+    },
   ]);
+
+  const AddUser = () => {
+    setUsers([
+      ...Users,
+      { Fname: "nEW", Lname: "AA", Image: "AA", Email: "AA", id: 4 },
+    ]);
+  };
+
+  
 
   return (
     <div className="card-panel container center col l6 right">
@@ -33,15 +49,17 @@ const UserList = () => {
       <ul>
         {Users.map((User) => {
           return (
-           <CardUser
-           Name={User.Fname}
-           LastName={User.Lname}
-           Email={User.Email}
-           image={User.Image}
-           ></CardUser>
+            <CardUser
+              Name={User.Fname}
+              LastName={User.Lname}
+              Email={User.Email}
+              image={User.Image}
+            />
           );
         })}
       </ul>
+
+      <a className="btn black white-text" onClick={AddUser}></a>
     </div>
   );
 };
