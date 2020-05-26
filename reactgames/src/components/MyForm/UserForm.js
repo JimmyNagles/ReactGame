@@ -5,7 +5,7 @@ const UserForm = ({ AddUser }) => {
 
   const HandleSubmit = (e) => {
     e.preventDefault();
-
+    alert(UserForm);
     AddUser(UserForm);
   };
 
@@ -24,7 +24,7 @@ const UserForm = ({ AddUser }) => {
         <input
           className="btn-large waves-effect waves-light blue darken-4"
           type="submit"
-          value="addUser"
+          value="AddUser"
         ></input>
       </form>
     </div>
