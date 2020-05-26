@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import CardUser from "../Card/CardUser";
 import Uuid from "react-uuid";
+import UserForm from "../MyForm/UserForm";
+
 const UserList = () => {
   const [Users, setUsers] = useState([
     {
@@ -36,15 +38,23 @@ const UserList = () => {
   const AddUser = () => {
     setUsers([
       ...Users,
-      { Fname: "First Name", Lname: "Last Name", Email: "Email", id: Uuid() },
+      {
+        Fname: "First Name",
+        Lname: "Last Name",
+        Email: "Email",
+        id: Uuid(),
+        Image: "https://www.fillmurray.com/200/200",
+      },
     ]);
   };
 
   return (
-    <div className="card-panel container center col l6 right">
+    <div className="card-panel container center col l6 right ">
+        <h2>New User</h2>
+      <UserForm></UserForm>
       <h2>List of User</h2>
 
-      <ul>
+      <ul className=" ">
         {Users.map((User) => {
           return (
             <CardUser
@@ -57,8 +67,6 @@ const UserList = () => {
           );
         })}
       </ul>
-
-      <a className="btn black white-text" onClick={AddUser}></a>
     </div>
   );
 };
