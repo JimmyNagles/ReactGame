@@ -6,13 +6,9 @@ import UserForm from "../components/MyForm/UserForm";
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
-<div className="row">
-
-
-      <UserList></UserList>
-</div>
-
+      <div className="row">
+        <UserList></UserList>
+      </div>
     </div>
   );
 };

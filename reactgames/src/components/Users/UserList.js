@@ -49,12 +49,12 @@ const UserList = () => {
   };
 
   return (
-    <div className="card-panel container center col l6 right ">
+    <div className="card-panel container  col l6  ">
         <h2>New User</h2>
       <UserForm></UserForm>
       <h2>List of User</h2>
 
-      <ul className=" ">
+      <p className="">
         {Users.map((User) => {
           return (
             <CardUser
@@ -66,7 +66,7 @@ const UserList = () => {
             />
           );
         })}
-      </ul>
+      </p>
     </div>
   );
 };
