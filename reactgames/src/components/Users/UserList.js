@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CardUser from "../Card/CardUser";
-
+import Uuid from "react-uuid";
 const UserList = () => {
   const [Users, setUsers] = useState([
     {
@@ -36,11 +36,9 @@ const UserList = () => {
   const AddUser = () => {
     setUsers([
       ...Users,
-      { Fname: "nEW", Lname: "AA", Image: "AA", Email: "AA", id: 4 },
+      { Fname: "First Name", Lname: "Last Name", Email: "Email", id: Uuid() },
     ]);
   };
-
-  
 
   return (
     <div className="card-panel container center col l6 right">
@@ -54,6 +52,7 @@ const UserList = () => {
               LastName={User.Lname}
               Email={User.Email}
               image={User.Image}
+              Profile={User.id}
             />
           );
         })}
