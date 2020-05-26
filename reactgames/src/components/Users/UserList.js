@@ -39,19 +39,16 @@ const UserList = () => {
     setUsers([
       ...Users,
       {
-        Fname: "First Name",
-        Lname: "Last Name",
-        Email: "Email",
+        Fname: UserForm,
         id: Uuid(),
-        Image: "https://www.fillmurray.com/200/200",
       },
     ]);
   };
 
   return (
     <div className="card-panel container  col l6  ">
-        <h2>New User</h2>
-      <UserForm></UserForm>
+      <h2>New User</h2>
+      <UserForm AddUser={AddUser}></UserForm>
       <h2>List of User</h2>
 
       <p className="">
