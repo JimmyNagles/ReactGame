@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const UserForm = () => {
+const UserForm = ({ addUser }) => {
   const [UserForm, SetUserForm] = useState({
     Fname: "",
     Lname: "",
@@ -9,7 +9,10 @@ const UserForm = () => {
 
   const HandleSubmit = (e) => {
     e.preventDefault();
-    alert(UserForm);
+
+    addUser(UserForm);
+
+    SetUserForm({ Fname: "", Lname: "", Email: "" });
   };
 
   const handleChange = (event) => {

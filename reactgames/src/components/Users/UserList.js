@@ -36,11 +36,12 @@ const UserList = () => {
   ]);
 
   const AddUser = (UserForm) => {
-
     setUsers([
       ...Users,
       {
-        Fname: UserForm,
+        Fname: UserForm.Fname,
+        Lname: UserForm.Lname,
+        Email: UserForm.Email,
         id: Uuid(),
       },
     ]);
@@ -49,7 +50,7 @@ const UserList = () => {
   return (
     <div className="card-panel container  col l6  ">
       <h2>New User</h2>
-      <UserForm ></UserForm>
+      <UserForm addUser={AddUser}></UserForm>
       <h2>List of User</h2>
 
       <p className="">
