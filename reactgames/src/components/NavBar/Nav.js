@@ -4,8 +4,8 @@ const Nav = () => {
   return (
     <nav>
       <div class="nav-wrapper blue darken-4">
-        <a href="#" class="brand-logo">
-          Logo
+        <a href="/" class="brand-logo">
+          Game
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li>

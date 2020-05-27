@@ -1,24 +1,45 @@
 import React, { useState } from "react";
 
-const UserForm = ({ AddUser }) => {
-  const [UserForm, SetUserForm] = useState("");
+const UserForm = () => {
+  const [UserForm, SetUserForm] = useState({
+    Fname: "",
+    Lname: "",
+    Email: "",
+  });
 
   const HandleSubmit = (e) => {
     e.preventDefault();
     alert(UserForm);
-    AddUser(UserForm);
   };
 
-  const handleChange = (e) => {};
-
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    SetUserForm({
+      ...UserForm,
+      [name]: value,
+    });
+  };
   return (
     <div className="container center ">
       <form className="center" onSubmit={HandleSubmit}>
         <label className="input-field">User Name</label>
         <input
-          value={UserForm}
+          name="Fname"
+          value={UserForm.Fname}
           required
-          onChange={(e) => SetUserForm(e.target.value)}
+          onChange={handleChange}
+        ></input>
+        <input
+          name="Lname"
+          value={UserForm.Lname}
+          required
+          onChange={handleChange}
+        ></input>
+        <input
+          name="Email"
+          value={UserForm.Email}
+          required
+          onChange={handleChange}
         ></input>
 
         <input
