@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:wght@500&display=swap");
+
+
+
+
+body {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+
+  
+}
+
+body::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
+}

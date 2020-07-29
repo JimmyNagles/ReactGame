@@ -5,6 +5,7 @@ const UserForm = ({ addUser }) => {
     Fname: "",
     Lname: "",
     Email: "",
+    Password: "",
   });
 
   const HandleSubmit = (e) => {
@@ -12,7 +13,7 @@ const UserForm = ({ addUser }) => {
 
     addUser(UserForm);
 
-    SetUserForm({ Fname: "", Lname: "", Email: "" });
+    SetUserForm({ Fname: "", Lname: "", Email: "",Password:"" });
   };
 
   const handleChange = (event) => {
@@ -25,22 +26,31 @@ const UserForm = ({ addUser }) => {
   return (
     <div className="container center ">
       <form className="center" onSubmit={HandleSubmit}>
-        <label className="input-field">User Name</label>
+        <label className="input-field">First Name</label>
         <input
           name="Fname"
           value={UserForm.Fname}
           required
           onChange={handleChange}
         ></input>
+        <label className="input-field">Last Name</label>
         <input
           name="Lname"
           value={UserForm.Lname}
           required
           onChange={handleChange}
         ></input>
+        <label className="input-field">Email</label>
         <input
           name="Email"
           value={UserForm.Email}
+          required
+          onChange={handleChange}
+        ></input>
+        <label className="input-field">Password</label>
+        <input
+          name="Password"
+          value={UserForm.Password}
           required
           onChange={handleChange}
         ></input>
